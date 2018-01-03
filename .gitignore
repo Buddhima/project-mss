@@ -1,3 +1,5 @@
 .idea/
 project-mss.iml
+*.iml
+*/target/**
 

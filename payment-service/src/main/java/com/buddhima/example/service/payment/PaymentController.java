@@ -6,26 +6,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 @RestController
 @RequestMapping(value = "/payment")
 public class PaymentController {
 
-    /*@RequestMapping(method = GET)
-    public boolean version() {
-        System.out.println("Version requested!");
-        return true;
-    }*/
+    private static Logger logger = Logger.getLogger(PaymentController.class.getName());
 
     @Autowired
     private CustomerInfoClient customerInfoClient;
 
     @RequestMapping(value = "/name", method = RequestMethod.GET)
     public String getName() {
+        logger.log(Level.INFO, "Name called");
         return customerInfoClient.getName();
     }
 
     @RequestMapping(value = "/age", method = RequestMethod.GET)
     public int getAge() {
+        logger.log(Level.INFO, "Age called");
         return customerInfoClient.getAge();
     }
 }
