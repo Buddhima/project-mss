@@ -1,0 +1,18 @@
+server:
+  port: 9060
+
+spring:
+  application:
+    name: turbine-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
+
+turbine:
+  clusterNameExpression: new String("default")
+  appConfig: PAYMENT-SERVICE,CUSTOMERINFO-SERVICE,EDGE-SERVICE
+  combineHostPort: true

@@ -24,6 +24,7 @@
         <module>customerinfo-service</module>
         <module>edge-service</module>
         <module>zipkin-service</module>
+        <module>turbine-service</module>
     </modules>
 
 
